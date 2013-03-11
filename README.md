@@ -10,10 +10,14 @@ Currently the project is pretty basic and uses [LIRC](http://www.lirc.org/) to c
 #### Details
 The project uses a Raspberry Pi to handle all requests. It's running Apache 2 and through the script remote.sh, allows a user to specify a remote control command that in turn fired by the IR Toy.There is an accompanying Android app optimised for a Nexus 7, which currently allows a user to control their TV through the app.
 
-#### Hardware Used
+#### Automation Hardware Used
 * [Raspberry Pi](http://www.raspberrypi.org/) (using Raspbian)
-* [USB IR Toy v2](http://dangerousprototypes.com/docs/USB_Infrared_Toy)
+* [USB IR Toy v2](http://dangerousprototypes.com/docs/USB_Infrared_Toy) 
 * [TellStick](http://www.telldus.se/products/tellstick)
+
+The total cost is around £60 for the Pi, IR Toy and TellStick.
+
+#### Equipment Used
 * RF compatible remote sockets
 * Sony RM-ED035 TV
 * Nexus 7 (or any Android device)
@@ -21,7 +25,6 @@ The project uses a Raspberry Pi to handle all requests. It's running Apache 2 an
 #### License
 
 home-automation is distributed under the [GNU General Public License v3](http://www.gnu.org/licenses) - see the accompanying LICENSE file for more details.
-
 
 #### Extra
 
