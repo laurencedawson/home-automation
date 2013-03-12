@@ -15,248 +15,359 @@
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="20dp" >
-
-    <TextView
-        android:id="@+id/row_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="bottom"
-        android:padding="8dp"
-        android:text="TV"
-        android:textColor="@android:color/holo_blue_bright"
-        android:textSize="12dp"
-        android:textStyle="bold" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/border_width"
-        android:background="#373939" />
+    android:layout_height="match_parent" >
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp" >
 
-        <ImageButton
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:onClick="remoteClicked"
-            android:src="@drawable/ic_menu_remote_input"
-            android:tag="INPUT" />
+            android:layout_height="@dimen/button_height"
+            android:orientation="horizontal"
+            android:padding="8dp" >
+
+            <TextView
+                android:id="@+id/row_header"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/tv_switch"
+                android:gravity="bottom"
+                android:text="HOME STATS"
+                android:textColor="@android:color/holo_blue_bright"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <Switch
+                android:id="@+id/stats_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:checked="true"
+                android:textOff="HIDE"
+                android:textOn="SHOW" />
+        </RelativeLayout>
 
         <View
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_height="@dimen/border_width"
+            android:background="#373939" />
 
-        <ImageButton
+        <LinearLayout
+            android:id="@+id/stats_buttons"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:onClick="remoteClicked"
-            android:src="@drawable/ic_menu_remote_power"
-            android:tag="STANDBY"
-            android:text="Power" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="20dp">
+
+            <TextView
+                android:id="@+id/power_label"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/row_switch_3"
+                android:gravity="center"
+                android:text="125W"
+                android:textColor="@android:color/white"
+                android:textSize="58dp"
+                android:layout_weight="1"/>
+
+            <TextView
+                android:id="@+id/temperature_label"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/row_switch_3"
+                android:gravity="center"
+                android:text="16°C"
+                android:textColor="@android:color/white"
+                android:textSize="58dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:padding="8dp" >
+
+            <TextView
+                android:id="@+id/row_header"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/tv_switch"
+                android:gravity="bottom"
+                android:text="TV CONTROLS"
+                android:textColor="@android:color/holo_blue_bright"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <Switch
+                android:id="@+id/tv_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:checked="true"
+                android:textOff="HIDE"
+                android:textOn="SHOW" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/border_width"
+            android:background="#373939" />
+
+        <LinearLayout
+            android:id="@+id/tv_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:onClick="remoteClicked"
+                    android:src="@drawable/ic_menu_remote_input"
+                    android:tag="INPUT" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:onClick="remoteClicked"
+                    android:src="@drawable/ic_menu_remote_power"
+                    android:tag="STANDBY"
+                    android:text="Power" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <com.laurencedawson.home_automation.TouchPadView
+                    android:id="@+id/touchpad"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="4dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:onClick="remoteClicked"
+                    android:src="@drawable/ic_menu_remote_return"
+                    android:tag="EXIT" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="remoteClicked"
+                    android:tag="Home"
+                    android:text="Home" />
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:onClick="remoteClicked"
+                    android:tag="OPTIONS"
+                    android:text="Options" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal" >
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:onClick="remoteClicked"
+                    android:src="@drawable/ic_menu_remote_voume_down"
+                    android:tag="VOLUMEDOWN"
+                    android:text="Volume Down" />
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:onClick="remoteClicked"
+                    android:src="@drawable/ic_menu_remote_mute"
+                    android:tag="MUTE" />
+
+                <ImageButton
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:onClick="remoteClicked"
+                    android:src="@drawable/ic_menu_remote_voume_up"
+                    android:tag="VOLUMEUP" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_marginTop="30dp"
+            android:orientation="horizontal"
+            android:padding="8dp" >
+
+            <TextView
+                android:id="@+id/row_header"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_toLeftOf="@+id/tv_switch"
+                android:gravity="bottom"
+                android:text="LiGHT CONTROLS"
+                android:textColor="@android:color/holo_blue_bright"
+                android:textSize="12dp"
+                android:textStyle="bold" />
+
+            <Switch
+                android:id="@+id/lights_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentRight="true"
+                android:checked="true"
+                android:textOff="HIDE"
+                android:textOn="SHOW" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/border_width"
+            android:layout_marginBottom="10dp"
+            android:background="#373939" />
+
+        <LinearLayout
+            android:id="@+id/light_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:orientation="horizontal"
+                android:padding="8dp" >
+
+                <TextView
+                    android:id="@+id/lights_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/row_switch"
+                    android:gravity="center_vertical"
+                    android:text="LOUNGE"
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp" />
+
+                <Switch
+                    android:id="@+id/row_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#36393c" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:orientation="horizontal"
+                android:padding="8dp" >
+
+                <TextView
+                    android:id="@+id/lights_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/row_switch_2"
+                    android:gravity="center_vertical"
+                    android:text="KITCHEN"
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp" />
+
+                <Switch
+                    android:id="@+id/row_switch_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#36393c" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/button_height"
+                android:orientation="horizontal"
+                android:padding="8dp" >
+
+                <TextView
+                    android:id="@+id/lights_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/row_switch_3"
+                    android:gravity="center_vertical"
+                    android:text="BEDROOM"
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp" />
+
+                <Switch
+                    android:id="@+id/row_switch_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:background="#36393c" />
+        </LinearLayout>
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="250dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal" >
-
-        <com.laurencedawson.home_automation.TouchPadView
-            android:id="@+id/touchpad"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="4dp" />
-    </LinearLayout>
-    
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal" >
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:onClick="remoteClicked"
-            android:tag="EXIT"
-            android:text="Return" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="remoteClicked"
-            android:text="Home"
-            android:tag="Home" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:onClick="remoteClicked"
-            android:tag="OPTIONS"
-            android:text="Options" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginTop="10dp"
-        android:orientation="horizontal" >
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:onClick="remoteClicked"
-            android:tag="VOLUMEDOWN"
-            android:text="Volume Down" />
-
-        <ImageButton
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:onClick="remoteClicked"
-            android:src="@drawable/ic_menu_remote_mute"
-            android:tag="MUTE" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_weight="1"
-            android:onClick="remoteClicked"
-            android:tag="VOLUMEUP"
-            android:text="Volume Up" />
-    </LinearLayout>
-
-    <TextView
-        android:id="@+id/row_header"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:gravity="bottom"
-        android:padding="8dp"
-        android:text="LIGHTS"
-        android:textColor="@android:color/holo_blue_bright"
-        android:textSize="12dp"
-        android:textStyle="bold" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/border_width"
-        android:layout_marginBottom="10dp"
-        android:background="#373939" />
-
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:orientation="horizontal"
-        android:padding="8dp" >
-
-        <TextView
-            android:id="@+id/lights_1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_toLeftOf="@+id/row_switch"
-            android:gravity="center_vertical"
-            android:text="LOUNGE"
-            android:textColor="@android:color/white"
-            android:textSize="16dp" />
-
-        <Switch
-            android:id="@+id/row_switch"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true" />
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:background="#36393c" />
-
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:orientation="horizontal"
-        android:padding="8dp" >
-
-        <TextView
-            android:id="@+id/lights_2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_toLeftOf="@+id/row_switch_2"
-            android:gravity="center_vertical"
-            android:text="KITCHEN"
-            android:textColor="@android:color/white"
-            android:textSize="16dp" />
-
-        <Switch
-            android:id="@+id/row_switch_2"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true" />
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:background="#36393c" />
-
-    <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:orientation="horizontal"
-        android:padding="8dp" >
-
-        <TextView
-            android:id="@+id/lights_3"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_toLeftOf="@+id/row_switch_3"
-            android:gravity="center_vertical"
-            android:text="BEDROOM"
-            android:textColor="@android:color/white"
-            android:textSize="16dp" />
-
-        <Switch
-            android:id="@+id/row_switch_3"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true" />
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginTop="10dp"
-        android:background="#36393c" />
-
-</LinearLayout>
+</ScrollView>

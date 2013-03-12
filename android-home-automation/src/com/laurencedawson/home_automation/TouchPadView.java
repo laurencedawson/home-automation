@@ -32,9 +32,10 @@ public class TouchPadView extends View {
 	private int mBorderWidth;
 	private Paint mPaint;
 	private GestureDetector mGestureDetector;
-	private int mSensitivity = 50;
+	private int mSensitivity;
 	private OnActionListener mActionListener;
-
+	private boolean mInverse = true;
+	
 	public TouchPadView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		mBorderWidth = context.getResources().getDimensionPixelOffset(R.dimen.border_width);
@@ -46,7 +47,7 @@ public class TouchPadView extends View {
 		
 		// Setup the sensitivity for the swipes
 		mSensitivity = 
-				(int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 120, getResources().getDisplayMetrics());
+				(int) TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 100, getResources().getDisplayMetrics());
 	}
 
 	@Override
@@ -86,28 +87,40 @@ public class TouchPadView extends View {
 			// Detect left swipe
 			if((e1.getX() - e2.getX()) > mSensitivity){
 				if(mActionListener!=null){
-					mActionListener.onAction("LEFT");
+					if(mInverse)
+						mActionListener.onAction("RIGHT");
+					else
+						mActionListener.onAction("LEFT");
 				}
 			}
 
 			// Detect right swipe
 			else if((e2.getX() - e1.getX()) > mSensitivity){
 				if(mActionListener!=null){
-					mActionListener.onAction("RIGHT");
+					if(mInverse)
+						mActionListener.onAction("LEFT");
+					else
+						mActionListener.onAction("RIGHT");
 				}
 			}
 
 			// Detect up swipe
 			else if((e1.getY() - e2.getY()) > mSensitivity){
 				if(mActionListener!=null){
-					mActionListener.onAction("UP");
+					if(mInverse)
+						mActionListener.onAction("DOWN");
+					else
+						mActionListener.onAction("UP");
 				}
 			}
 
 			// Detect down swipe
 			else if((e2.getY() - e1.getY()) > mSensitivity){
 				if(mActionListener!=null){
-					mActionListener.onAction("DOWN");
+					if(mInverse)
+						mActionListener.onAction("UP");
+					else
+						mActionListener.onAction("DOWN");
 				}
 			}
 

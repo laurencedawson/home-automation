@@ -1,0 +1,53 @@
+com.laurencedawson.home_automation.BuildConfig: BuildConfig()
+com.laurencedawson.home_automation.HomeAutomationActivity
+com.laurencedawson.home_automation.HomeAutomationActivity: HomeAutomationActivity()
+com.laurencedawson.home_automation.HomeAutomationActivity: void remoteClicked(android.view.View)
+com.laurencedawson.home_automation.R: R()
+com.laurencedawson.home_automation.R$attr: R$attr()
+com.laurencedawson.home_automation.R$color: int dark
+com.laurencedawson.home_automation.R$color: R$color()
+com.laurencedawson.home_automation.R$dimen: int border_width
+com.laurencedawson.home_automation.R$dimen: int button_height
+com.laurencedawson.home_automation.R$dimen: R$dimen()
+com.laurencedawson.home_automation.R$drawable: int ic_launcher
+com.laurencedawson.home_automation.R$drawable: int ic_menu_remote_input
+com.laurencedawson.home_automation.R$drawable: int ic_menu_remote_mute
+com.laurencedawson.home_automation.R$drawable: int ic_menu_remote_power
+com.laurencedawson.home_automation.R$drawable: int ic_menu_remote_return
+com.laurencedawson.home_automation.R$drawable: int ic_menu_remote_settings
+com.laurencedawson.home_automation.R$drawable: int ic_menu_remote_tv
+com.laurencedawson.home_automation.R$drawable: int ic_menu_remote_voume_down
+com.laurencedawson.home_automation.R$drawable: int ic_menu_remote_voume_up
+com.laurencedawson.home_automation.R$drawable: R$drawable()
+com.laurencedawson.home_automation.R$id: int light_buttons
+com.laurencedawson.home_automation.R$id: int lights_1
+com.laurencedawson.home_automation.R$id: int lights_2
+com.laurencedawson.home_automation.R$id: int lights_3
+com.laurencedawson.home_automation.R$id: int lights_switch
+com.laurencedawson.home_automation.R$id: int menu_settings
+com.laurencedawson.home_automation.R$id: int power_label
+com.laurencedawson.home_automation.R$id: int row_header
+com.laurencedawson.home_automation.R$id: int row_switch
+com.laurencedawson.home_automation.R$id: int row_switch_2
+com.laurencedawson.home_automation.R$id: int row_switch_3
+com.laurencedawson.home_automation.R$id: int stats_buttons
+com.laurencedawson.home_automation.R$id: int stats_switch
+com.laurencedawson.home_automation.R$id: int temperature_label
+com.laurencedawson.home_automation.R$id: int touchpad
+com.laurencedawson.home_automation.R$id: int tv_buttons
+com.laurencedawson.home_automation.R$id: int tv_switch
+com.laurencedawson.home_automation.R$id: R$id()
+com.laurencedawson.home_automation.R$layout: int activity_home_automation
+com.laurencedawson.home_automation.R$layout: R$layout()
+com.laurencedawson.home_automation.R$menu: int main
+com.laurencedawson.home_automation.R$menu: R$menu()
+com.laurencedawson.home_automation.R$string: int app_name
+com.laurencedawson.home_automation.R$string: int menu_settings
+com.laurencedawson.home_automation.R$string: R$string()
+com.laurencedawson.home_automation.R$style: int ActionBar
+com.laurencedawson.home_automation.R$style: int ActionBar_TitleTextStyle
+com.laurencedawson.home_automation.R$style: int AppTheme
+com.laurencedawson.home_automation.R$style: R$style()
+com.laurencedawson.home_automation.TouchPadView
+com.laurencedawson.home_automation.TouchPadView: TouchPadView(android.content.Context,android.util.AttributeSet)
+com.laurencedawson.home_automation.TouchPadView: void setOnActionListener(com.laurencedawson.home_automation.TouchPadView$OnActionListener)
