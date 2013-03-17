@@ -1,0 +1,319 @@
+<!--
+  android-home-automation
+  Copyright (C) Copyright (C) 2013 Laurence Dawson <contact@laurencedawson.com>
+   
+  This program is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+ 
+  This program is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:id="@+id/wrapper_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom"
+            android:padding="8dp"
+            android:text="HOME STATS"
+            android:textColor="@android:color/holo_blue_bright"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/border_width"
+            android:background="#373939" />
+
+        <LinearLayout
+            android:id="@+id/stats_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:id="@+id/power_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/power_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@android:color/white"
+                    android:textSize="68dp" />
+
+                <TextView
+                    android:id="@+id/power_units"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="W"
+                    android:textColor="@android:color/white"
+                    android:textSize="68dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/temperature_wrapper"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="horizontal" >
+
+                <TextView
+                    android:id="@+id/temperature_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:textColor="@android:color/white"
+                    android:textSize="68dp" />
+
+                <TextView
+                    android:id="@+id/temperature_units"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="°C"
+                    android:textColor="@android:color/white"
+                    android:textSize="68dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="30dp"
+            android:gravity="bottom"
+            android:padding="8dp"
+            android:text="LIGHT CONTROLS"
+            android:textColor="@android:color/holo_blue_bright"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/border_width"
+            android:background="#373939" />
+
+        <LinearLayout
+            android:id="@+id/light_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/row_height"
+                android:orientation="horizontal"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/lounge_lights"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/lounge_switch"
+                    android:gravity="center_vertical"
+                    android:text="LOUNGE"
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp" />
+
+                <Switch
+                    android:id="@+id/lounge_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:focusable="true" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#36393c" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/row_height"
+                android:orientation="horizontal"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/kitchen_lights"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/kitchen_switch"
+                    android:gravity="center_vertical"
+                    android:text="KITCHEN"
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp" />
+
+                <Switch
+                    android:id="@+id/kitchen_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:focusable="true" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#36393c" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/row_height"
+                android:orientation="horizontal"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/bedroom_lights"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toLeftOf="@+id/bedroom_switch"
+                    android:gravity="center_vertical"
+                    android:text="BEDROOM"
+                    android:textColor="@android:color/white"
+                    android:textSize="16dp" />
+
+                <Switch
+                    android:id="@+id/bedroom_switch"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:focusable="true" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#36393c" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:gravity="bottom"
+            android:padding="8dp"
+            android:text="DEVICES"
+            android:textColor="@android:color/holo_blue_bright"
+            android:textSize="12dp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/border_width"
+            android:background="#373939" />
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/row_height"
+            android:background="@drawable/clicked"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_menu_remote_tv"
+            android:drawablePadding="12dp"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:text="Sony RM-ED035"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:onClick="deviceSelected"
+            android:tag="tv"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#36393c" />
+
+        <TextView
+            android:id="@+id/playstation"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/row_height"
+            android:background="@drawable/clicked"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_menu_remote_console"
+            android:drawablePadding="12dp"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:text="Sony PlayStation 3"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:onClick="deviceSelected"
+            android:tag="playstation"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#36393c" />
+
+        <TextView
+            android:id="@+id/webcam"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/row_height"
+            android:background="@drawable/clicked"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_menu_remote_camera"
+            android:drawablePadding="12dp"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:text="WEBCAM"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:onClick="deviceSelected"
+            android:tag="webcam"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#36393c" />
+        
+        <TextView
+            android:id="@+id/stero"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/row_height"
+            android:background="@drawable/clicked"
+            android:clickable="true"
+            android:drawableLeft="@drawable/ic_menu_remote_music"
+            android:drawablePadding="12dp"
+            android:gravity="center_vertical"
+            android:padding="8dp"
+            android:text="Stereo"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="16dp"
+            android:onClick="deviceSelected"
+            android:tag="stero"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#36393c" />
+        
+    </LinearLayout>
+
+</ScrollView>

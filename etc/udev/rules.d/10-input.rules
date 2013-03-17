@@ -1,2 +1,2 @@
-SUBSYSTEM=="usb", ATTRS{manufacturer}=="Prolific Technology Inc.", SYMLINK+="energy_meter"
+SUBSYSTEM=="usb", ATTRS{manufacturer}=="Prolific Technology Inc.", SYMLINK+="energy-meter"
 ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="fd08", SYMLINK+="ir-toy"

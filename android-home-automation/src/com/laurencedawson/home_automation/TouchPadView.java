@@ -53,16 +53,16 @@ public class TouchPadView extends View {
 	@Override
 	protected void onDraw(Canvas canvas) {
 		// Top
-		canvas.drawRect(0, 0, getWidth(), mBorderWidth, mPaint);
+		canvas.drawRect(getPaddingLeft(), 0, getWidth()-getPaddingRight(), mBorderWidth, mPaint);
 
 		// Bottom
-		canvas.drawRect(0, getHeight()-mBorderWidth, getWidth(), getHeight(), mPaint);
+		canvas.drawRect(getPaddingLeft(), getHeight()-mBorderWidth, getWidth()-getPaddingRight(), getHeight(), mPaint);
 
 		// Left
-		canvas.drawRect(0, 0, mBorderWidth, getHeight(), mPaint);
+		canvas.drawRect(getPaddingLeft(), 0, getPaddingLeft() + mBorderWidth, getHeight(), mPaint);
 
-		// right
-		canvas.drawRect(getWidth()-mBorderWidth, 0, getWidth(), getHeight(), mPaint);
+		// Right
+		canvas.drawRect((getWidth()-getPaddingRight())-mBorderWidth, 0, getWidth()-getPaddingRight(), getHeight(), mPaint);
 	}
 
 	@Override

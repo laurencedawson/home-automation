@@ -1,0 +1,2 @@
+sh /home/pi/scripts/start_irtoy.sh
+perl /home/pi/scripts/read_meter.pl &

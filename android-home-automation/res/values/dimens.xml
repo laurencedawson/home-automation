@@ -18,5 +18,6 @@
 
 <resources>
     <dimen name="border_width">2dp</dimen>
-    <dimen name="button_height">48dp</dimen>    
+    <dimen name="row_height">68dp</dimen>
+    <dimen name="button_height">48dp</dimen>
 </resources>
