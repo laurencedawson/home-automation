@@ -1,6 +1,6 @@
 # home-automation
 
-![image](http://i.imgur.com/zOqRQApm.png)
+![image](http://i.imgur.com/y4lgxDjl.png)
 
 #### Overview
 home-automation is a simple attempt to utilise a Raspberry Pi for various home automation tasks.
@@ -8,7 +8,9 @@ home-automation is a simple attempt to utilise a Raspberry Pi for various home a
 Currently the project is pretty basic and uses [LIRC](http://www.lirc.org/) to control a TV, however more functionality such power socket control is being added.
 
 #### Details
-The project uses a Raspberry Pi to handle all requests. It's running Apache 2 and through the script remote.sh, allows a user to specify a remote control command that in turn fired by the IR Toy.There is an accompanying Android app optimised for a Nexus 7, which currently allows a user to control their TV through the app.
+The project uses a Raspberry Pi to handle all requests. It's running Apache 2 and through the script remote.sh, allows a user to specify a remote control command that in turn fired by the IR Toy.
+
+There is an accompanying Android app optimised for a Nexus 7, which currently allows a user to control their TV through the app.
 
 #### Automation Hardware Used
 * [Raspberry Pi](http://www.raspberrypi.org/) (using Raspbian)
