@@ -134,7 +134,7 @@
                     android:layout_height="match_parent"
                     android:layout_toLeftOf="@+id/lounge_switch"
                     android:gravity="center_vertical"
-                    android:text="LOUNGE"
+                    android:text="Hallway"
                     android:textColor="@android:color/white"
                     android:textSize="16dp" />
 
@@ -163,7 +163,7 @@
                     android:layout_height="match_parent"
                     android:layout_toLeftOf="@+id/kitchen_switch"
                     android:gravity="center_vertical"
-                    android:text="KITCHEN"
+                    android:text="Study desk"
                     android:textColor="@android:color/white"
                     android:textSize="16dp" />
 
@@ -192,7 +192,7 @@
                     android:layout_height="match_parent"
                     android:layout_toLeftOf="@+id/bedroom_switch"
                     android:gravity="center_vertical"
-                    android:text="BEDROOM"
+                    android:text="Study window"
                     android:textColor="@android:color/white"
                     android:textSize="16dp" />
 

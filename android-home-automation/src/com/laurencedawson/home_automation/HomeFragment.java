@@ -44,6 +44,8 @@ public class HomeFragment extends Fragment {
 	public static final int LIGHTS_GRABBED = 1;
 	public static final int LIGHTS_UPDATED = 2;
 
+	public static final String BASE_URL = "http://192.168.1.106";
+	
 	@Override
 	public void onSaveInstanceState(Bundle outState) {
 		outState.putInt(POWER, mPower);
@@ -155,7 +157,7 @@ public class HomeFragment extends Fragment {
 			public void run() {
 				try{
 					DefaultHttpClient client = new DefaultHttpClient();
-					HttpGet request = new HttpGet("http://192.168.0.10/cgi-bin/stats.sh");
+					HttpGet request = new HttpGet(BASE_URL+"/cgi-bin/stats.sh");
 					HttpResponse response = client.execute(request);
 
 					// Check if the stream is gziped
@@ -189,7 +191,7 @@ public class HomeFragment extends Fragment {
 			public void run() {
 				try{
 					DefaultHttpClient client = new DefaultHttpClient();
-					HttpGet request = new HttpGet("http://192.168.0.10/cgi-bin/lights.sh");
+					HttpGet request = new HttpGet(BASE_URL+"/cgi-bin/lights.sh");
 					HttpResponse response = client.execute(request);
 
 					// Check if the stream is gziped
@@ -204,9 +206,9 @@ public class HomeFragment extends Fragment {
 					is.close();
 					client.getConnectionManager().shutdown();
 
-					mLounge = new JSONObject(json).getBoolean("lounge");
-					mKitchen = new JSONObject(json).getBoolean("kitchen");
-					mBedroom = new JSONObject(json).getBoolean("bedroom");
+					mLounge = new JSONObject(json).getBoolean("hallway");
+					mKitchen = new JSONObject(json).getBoolean("study_desk");
+					mBedroom = new JSONObject(json).getBoolean("study_window");
 
 					mHandler.sendEmptyMessage(LIGHTS_GRABBED);
 				}catch(Exception e){
@@ -229,10 +231,9 @@ public class HomeFragment extends Fragment {
 			public void run() {
 				try{
 					DefaultHttpClient client = new DefaultHttpClient();
-					HttpGet request = new HttpGet("http://192.168.0.10/cgi-bin/light_"+(action?"on":"off")+".sh?"+id);
+					HttpGet request = new HttpGet(BASE_URL+"/cgi-bin/light_"+(action?"on":"off")+".sh?"+id);
 					client.execute(request);
 					client.getConnectionManager().shutdown();
-					System.out.println("FINISHED");
 
 					mHandler.sendEmptyMessage(LIGHTS_UPDATED);
 				}catch(Exception e){
